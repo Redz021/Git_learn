@@ -1,5 +1,7 @@
 # Git学习
 
+[toc]
+
 ## Git的工作流程
 
 一般工作流程：
@@ -225,3 +227,69 @@ git rm -r * #递归删除，删除目录下所有文件和子目录
 用于查看指定文件的修改记录
 
 `git blame <file>`
+
+### 远程操作
+
+#### git remote
+
+用于在远程仓库的操作
+
+`git remote -v`显示所有远程仓库
+
+`git remote show [remote]`显示某个远程仓库的信息
+
+`git remote add [shortname] [url]`添加远程版本库，shortname为本地版本库
+
+`git remote rm name`删除远程仓库
+
+`git remote rename oldname newname`修改仓库名
+
+#### git fetch
+
+用于从远程获取代码库
+
+`git merge` 从远端仓库提取数据并尝试合并到当前分支
+
+假设配置好了一个远程仓库，并且想要提取更新的数据，可以首先执行
+
+`git fetch [alias]` 
+
+告诉Git去获取它有你没有的数据，然后执行
+
+`git merge [alias]/[branch]`
+
+将服务器上的任何更新合并到当前分支
+
+#### git pull
+
+用于从远程获取代码并合并本地的版本
+
+`git pull <远程主机名> <远程分支名>:<本地分支名>`
+
+#### git push
+
+用于将本地上的分支版本上传到远程合并
+
+`git push <远程主机名> <远程分支名>:<本地分支名>`
+
+如果本地分支名和远程分支名相同，可以省略冒号
+
+如果本地版本与远程版本有差异，要强制推送可以使用`--force`参数
+
+## Git分支管理
+
+创建分支`git branch (branchname)`
+
+切换分支`git checkout (branchname)`
+
+合并分支`git merge`
+
+列出分支`git branch`
+
+删除分支`git branch -d (branchname)`
+
+[git branch][https://www.runoob.com/git/git-branch.html]
+
+## Git标签
+
+`git tag -a v1.0` 将项目标记为1.0版本，-a选项意为**创建一个带注解的标签**，不使用该选项则不会记录标签的详细信息。
