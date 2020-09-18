@@ -202,5 +202,26 @@ git rm -r * #递归删除，删除目录下所有文件和子目录
 
 用于移动或者重命名文件、目录、软连接
 
-`git mv [file] [newfile]`
+`git mv -f [file] [newfile] #-f参数为强制重命名`
 
+### 提交日志
+
+#### git log
+
+用于查看历史提交记录
+
+`git log --oneline`查看历史记录的简介版本
+
+`git log --graph`开启拓扑图选项，查看历史中什么时候出现了分支、合并
+
+`git log --reverse`逆向显示所有历史
+
+`git log --author=xxx`查看xxx用户的提交日志
+
+`--since --before --until --after`均可以查看指定日期的提交记录
+
+#### git blame
+
+用于查看指定文件的修改记录
+
+`git blame <file>`
